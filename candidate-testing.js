@@ -27,7 +27,7 @@ function askQuestion() {
 // candidateAnswer = input.question(question + "\n")
 
 for (i = 0; i < questions.length; i++) {
-  let answer = input.question(`Question ${i + 1} is ${questions[i]}`);
+  let answer = input.question(`${i + 1}) ${questions[i]}`);
   candidateAnswers.push(answer);
 }
 // this.candidateAnswers = candidateAnswers;
@@ -59,7 +59,7 @@ function runProgram() {
   // gradeQuiz(this.candidateAnswers);
   gradeQuiz(candidateAnswers);
 }
-runProgram();
+
 // ----------- Don't write any code or change any code below this line ---------- //
 module.exports = {
   candidateName: candidateName,

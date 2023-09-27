@@ -29,7 +29,8 @@ function askQuestion() {
 for (i = 0; i < questions.length; i++) {
   let answer = input.question(`${i + 1}) ${questions[i]}`);
   candidateAnswers.push(answer);
-}
+} 
+console.log('\n');
 // this.candidateAnswers = candidateAnswers;
 }
 
@@ -54,14 +55,20 @@ for (i = 0; i < questions.length; i++) {
     grade++;
   }
 } grade = (grade / correctAnswers.length)*100;
-console.log(`Overall grade is ${grade}% (You answered ${grade} out of ${correctAnswers.length} correctly.)`);
-  return grade;
+console.log(`\nOverall grade is ${grade}% (You answered ${grade} out of ${correctAnswers.length} correctly.)\n`);
+if(grade >= 80) {
+  console.log(`Status: PASSED`);
+}  else {
+  console.log(`Status: FAILED`);
+}
+return grade;
+  
 }
 
 function runProgram() {
   askForName();
   // TODO 1.1c: Greet candidate using their name //
-   console.log("Hello " + candidateName + " welcome to the quiz.");
+   console.log("Hello " + candidateName + " welcome to the quiz.\n");
   askQuestion();
   gradeQuiz(this.candidateAnswers);
 }

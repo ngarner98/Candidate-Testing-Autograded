@@ -63,8 +63,7 @@ function runProgram() {
   // TODO 1.1c: Greet candidate using their name //
    console.log("Hello " + candidateName + " welcome to the quiz.");
   askQuestion();
-  // gradeQuiz(this.candidateAnswers); //This is part of the original repo, but the function breaks
-  gradeQuiz(candidateAnswers); // I added this, when I comment out the above line and replace with this the funtion runs normally
+  gradeQuiz(this.candidateAnswers);
 }
 
 // ----------- Don't write any code or change any code below this line ---------- //

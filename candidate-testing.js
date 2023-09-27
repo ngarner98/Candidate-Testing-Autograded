@@ -41,13 +41,20 @@ function gradeQuiz(candidateAnswers) {
 // } else {
 //   console.log("Your answer is incorrect...");
 // }
+
 for (i = 0; i < correctAnswers.length; i++) {
 console.log(`For question ${[i+1]} you said ${candidateAnswers[i]} and the correct answer is ${correctAnswers[i]}.`)
 }
+ 
+//TODO 3.2 use this variable to calculate the candidates score.
 
-  let grade;  //TODO 3.2 use this variable to calculate the candidates score.
-
-
+  let grade = 0;
+for (i = 0; i < questions.length; i++) {
+  if (candidateAnswers[i].toLowerCase() === correctAnswers[i].toLowerCase()) {
+    grade++;
+  }
+} grade = (grade / correctAnswers.length)*100;
+console.log(`Overall grade is ${grade}% (You answered ${grade} out of ${correctAnswers.length} correctly.)`);
   return grade;
 }
 
@@ -56,8 +63,8 @@ function runProgram() {
   // TODO 1.1c: Greet candidate using their name //
    console.log("Hello " + candidateName + " welcome to the quiz.");
   askQuestion();
-  // gradeQuiz(this.candidateAnswers);
-  gradeQuiz(candidateAnswers);
+  // gradeQuiz(this.candidateAnswers); //This is part of the original repo, but the function breaks
+  gradeQuiz(candidateAnswers); // I added this, when I comment out the above line and replace with this the funtion runs normally
 }
 
 // ----------- Don't write any code or change any code below this line ---------- //

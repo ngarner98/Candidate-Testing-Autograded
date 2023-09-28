@@ -42,6 +42,7 @@ function gradeQuiz(candidateAnswers) {
 // } else {
 //   console.log("Your answer is incorrect...");
 // }
+console.log(`Candidate Name: ${candidateName}`)
 
 for (i = 0; i < correctAnswers.length; i++) {
 console.log(`For question ${[i+1]} you said ${candidateAnswers[i]} and the correct answer is ${correctAnswers[i]}.`)
@@ -50,12 +51,14 @@ console.log(`For question ${[i+1]} you said ${candidateAnswers[i]} and the corre
 //TODO 3.2 use this variable to calculate the candidates score.
 
   let grade = 0;
+  let correctResponse = 0
+
 for (i = 0; i < questions.length; i++) {
   if (candidateAnswers[i].toLowerCase() === correctAnswers[i].toLowerCase()) {
     grade++;
   }
 } grade = (grade / correctAnswers.length)*100;
-console.log(`\nOverall grade is ${grade}% (You answered ${grade} out of ${correctAnswers.length} correctly.)\n`);
+console.log(`\nOverall grade is ${grade}% (You answered ${(grade/100)*correctAnswers.length} out of ${correctAnswers.length} correctly.)\n`);
 if(grade >= 80) {
   console.log(`Status: PASSED`);
 }  else {
